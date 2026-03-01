@@ -1,0 +1,863 @@
+/* ========== Initial =========== */
+@import url("https://fonts.googleapis.com/css2?family=Story+Script&display=swap");
+
+:root {
+  --font: Arial;
+  --colorPrimary: rgb(18, 119, 69);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+img.wave {
+  position: relative;
+  width: 100%;
+  top: 10px;
+}
+/* ========== Header =========== */
+header {
+  grid-area: "header";
+  width: 100%;
+  height: 90px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 90px;
+
+  background-color: #ffffff50;
+  backdrop-filter: blur(10px);
+  border-bottom: 0.8px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.01);
+
+  z-index: 1;
+}
+
+header .logo h1 a {
+  font-size: 28px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+header .logo img {
+  height: 80px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.5s ease;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+header nav a::after {
+  content: "";
+  display: block;
+  background-color: #ebc312;
+  height: 4px;
+  width: 0;
+  transition: all 0.5s ease;
+}
+
+header nav a:hover::after {
+  width: 50%;
+}
+
+.burger div {
+  width: 24px;
+  height: 4px;
+  background-color: #1f1f1f;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.burger .up {
+  top: 0;
+}
+
+.burger .bottom {
+  bottom: 0;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  height: 14px;
+}
+
+/* ========== Main ============ */
+main {
+  grid-area: "main";
+  overflow-x: hidden;
+}
+
+/* Hero Section ====== */
+
+main .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px 50px;
+  height: calc(95vh - 90px);
+}
+
+main .hero .left {
+  font-size: 22px;
+}
+
+main .hero .left h3 {
+  font-family: "Story Script", sans-serif;
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--colorPrimary);
+}
+
+main .hero .left h2 {
+  margin-bottom: 18px;
+}
+
+main .hero .right img {
+  height: 350px;
+}
+
+main .hero .button-area {
+  margin-top: 18px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+main .hero .button-area a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main .hero .menu-button {
+  background-color: rgb(18, 119, 69);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  border: 2px solid var(--colorPrimary);
+  cursor: pointer;
+}
+
+main .hero .menu-button:hover {
+  background-color: rgba(18, 119, 69, 0);
+  color: inherit;
+}
+
+main .hero .contact-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  border: 2px solid var(--colorPrimary);
+  background-color: rgba(18, 119, 69, 0);
+  cursor: pointer;
+}
+
+main .hero .contact-button:hover {
+  background-color: rgba(18, 119, 69, 1);
+  color: #fff;
+}
+
+/* About Section ========= */
+main .about {
+  max-width: 100%;
+  background-color: var(--colorPrimary);
+  padding: 0 100px;
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+main .about img {
+  border-radius: 100px;
+}
+
+main .about .right article {
+  max-width: 500px;
+  max-height: 50vh;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main .about .right article h2::after {
+  content: "";
+  background-color: #ebc312;
+  margin: 20px 0;
+  display: block;
+  height: 4px;
+  width: 160px;
+}
+
+main .about .medsos svg {
+  width: 32px;
+  margin: 0 6px;
+}
+
+/* Menu Section ======== */
+main .menu {
+  min-height: 95vh;
+  text-align: center;
+  padding: 90px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .menu h2::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 160px;
+  margin: 20px 0 40px;
+  background-color: #ebc312;
+}
+
+main .menu .menu-kategori {
+  width: 100%;
+  text-align: left;
+  padding: 20px 60px 8px;
+}
+
+main .menu .menu-kategori h3::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  background-color: #ebc312;
+}
+
+main .menu .our-menu {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+main .menu .our-menu .menu-item {
+  max-width: 250px;
+  min-height: 300px;
+}
+
+main .menu .our-menu .menu-item img {
+  width: 150px;
+}
+
+/* Testimoni Section ====== */
+
+main .testimoni {
+  padding: 60px 100px 0;
+  min-height: calc(100vh - 90px);
+  background-color: var(--colorPrimary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main .testimoni h2::after {
+  content: "";
+  background-color: #ebc312;
+  margin: 20px 0 40px;
+  display: block;
+  height: 4px;
+  width: 140px;
+}
+
+main .testimoni .card-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+main .testimoni .swiper-slide {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+main .testimoni .card {
+  width: 80%;
+  padding: 16px 24px;
+}
+
+main .testimoni .card img {
+  width: 130px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+main .testimoni .card p {
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+main .testimoni .swiper-pagination-bullet {
+  background: #ebc312;
+}
+
+main .testimoni .swiper-arrow {
+  color: #ebc312;
+}
+
+/* Gallery Section ========= */
+
+main .gallery {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 80px 100px 80px;
+}
+
+main .gallery h2::after {
+  content: "";
+  background-color: #ebc312;
+  margin: 20px 0 40px;
+  display: block;
+  height: 4px;
+  width: 140px;
+}
+
+main .gallery .gallery-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+main .gallery .gallery-card .card {
+  position: relative;
+  overflow: hidden;
+}
+
+main .gallery .gallery-card img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.img-scale {
+  scale: 1.1;
+}
+
+.info-gallery {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  height: 60px;
+  width: 300px;
+  text-align: left;
+  padding: 8px 20px 0;
+  font-weight: 600;
+  color: var(--colorPrimary);
+  transition: all 0.5s ease;
+  transform: translateY(0);
+  opacity: 0;
+  scale: 1;
+}
+
+.g-card-active {
+  transform: translateY(-52px);
+  opacity: 1;
+  scale: 1.1;
+}
+
+/* Contact Section */
+
+main .contact {
+  /* min-height: calc(100vh - 90px); */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 80px 100px 40px;
+  color: #fff;
+  background-color: var(--colorPrimary);
+}
+
+main .contact h2::after {
+  content: "";
+  background-color: #ebc312;
+  margin: 20px 0 40px;
+  display: block;
+  height: 4px;
+  width: 160px;
+}
+
+main .contact .contact-area {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+main .contact .info {
+  padding: 40px 120px 0 20px;
+  text-align: justify;
+}
+
+main .contact .info .info-card {
+  display: flex;
+  gap: 1em;
+  align-items: start;
+  margin: 10px 0;
+}
+
+main .contact .info .info-card p {
+  padding-top: 3px;
+}
+
+main .contact .contact-area .form {
+  width: 50%;
+  padding: 40px 20px;
+}
+
+main .contact .contact-area input,
+textarea,
+button {
+  display: block;
+  padding: 12px 12px;
+  margin: 6px 0;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+main .contact .contact-area textarea {
+  height: 100px;
+}
+
+main .contact-area input::placeholder,
+textarea::placeholder {
+  font-family: var(--font);
+}
+
+main .contact-area button {
+  color: #fff;
+  background-color: #ebc312;
+  font-weight: 600;
+  border: 1px solid #ebc312;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+main .contact-area button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ebc312;
+  color: #ebc312;
+}
+/* ========== Footer =========== */
+footer {
+  grid-area: "footer";
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  padding: 24px 80px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .copyright {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+footer .medsos svg {
+  width: 24px;
+  height: 24px;
+}
+
+footer .medsos a {
+  text-decoration: none;
+}
+
+/* ================= Breakpoint =================== */
+
+@media (max-width: 1024px) {
+  header .logo h1 a {
+    font-size: 18px;
+  }
+
+  header .logo img {
+    height: 50px;
+  }
+
+  header a {
+    font-size: 14px;
+  }
+
+  main .hero .left h2 {
+    font-size: 24px;
+  }
+
+  main .hero .left h3 {
+    font-size: 20px;
+  }
+
+  main .hero .left {
+    font-size: 18px;
+  }
+
+  main .hero .right img {
+    height: 250px;
+  }
+
+  .img.wave {
+    top: 35px;
+  }
+
+  main .about .right article {
+    width: 360px;
+  }
+
+  main .about img {
+    border-radius: 50px;
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  main .about p {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  main .menu .our-menu .menu-item img {
+    width: 120px;
+  }
+
+  main .menu .our-menu .menu-item p {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  main .testimoni .card-wrapper {
+    max-width: 800px;
+  }
+
+  main .testimoni .card p {
+    font-size: 14px;
+  }
+
+  main .testimoni .card {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  main .gallery .gallery-card img {
+    width: 250px;
+    height: 150px;
+  }
+
+  main .contact .contact-area .form {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  main .contact .info {
+    padding: 40px 100px 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .hero .right img {
+    height: 180px;
+  }
+
+  main .hero .left h2 {
+    font-size: 18px;
+  }
+
+  main .hero .left h3 {
+    font-size: 16px;
+  }
+
+  main .hero .left p {
+    font-size: 14px;
+  }
+
+  main .hero .button-area {
+    gap: 6px;
+  }
+
+  main .hero .button-area a {
+    font-size: 14px;
+  }
+
+  main .hero .menu-button,
+  main .hero .contact-button {
+    padding: 8px 16px;
+  }
+
+  header nav ul {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffffff50;
+    backdrop-filter: blur(10px);
+    border-bottom: 0.8px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.01);
+    padding-bottom: 80px;
+    width: 0;
+    height: 100vh;
+    display: none;
+  }
+
+  header nav ul.navigation.show {
+    display: flex;
+    width: 40%;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .burger .up.up-rotate {
+    transform: rotate(45deg);
+    top: 5px;
+  }
+  .burger .bottom.bottom-rotate {
+    transform: rotate(-45deg);
+    bottom: 5px;
+  }
+
+  main .about .right article {
+    max-width: 350px;
+  }
+
+  main .about .left img {
+    width: 220px;
+    border-radius: 20px;
+  }
+
+  main .about .right article p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  main .about .right article h2 {
+    font-size: 18px;
+  }
+
+  main .about .right article h2::after {
+    width: 100px;
+  }
+
+  main .about .right svg {
+    width: 22px;
+    height: 50px;
+    margin: 0;
+    gap: 6px;
+  }
+
+  main .menu h2 {
+    font-size: 18px;
+  }
+
+  main .menu h2::after {
+    width: 100px;
+  }
+
+  main .testimoni h2 {
+    font-size: 18px;
+  }
+
+  main .testimoni h2::after {
+    width: 100px;
+  }
+
+  main .testimoni .card-wrapper {
+    max-width: 580px;
+  }
+
+  main .testimoni .card-wrapper img {
+    width: 100px;
+  }
+
+  main .gallery h2 {
+    font-size: 18px;
+  }
+
+  main .gallery h2::after {
+    width: 100px;
+  }
+
+  main .gallery .gallery-card img {
+    width: 250px;
+    height: 100px;
+  }
+  main .gallery p {
+    font-size: 12px;
+  }
+
+  main .contact h2 {
+    font-size: 18px;
+  }
+
+  main .contact h2::after {
+    width: 100px;
+  }
+
+  main .contact .contact-area .info {
+    margin: 8px;
+    font-size: 12px;
+    padding: 40px 30px 0 20px;
+  }
+  main .contact .contact-area span {
+    font-size: 14px;
+  }
+  main .contact .contact-area .form {
+    width: 100%;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  main .hero .right img {
+    display: none;
+  }
+
+  main .hero .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  main .hero .left h3 {
+    font-size: 20px;
+  }
+
+  main .hero .left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  main .hero .left p {
+    font-size: 18px;
+  }
+
+  main .hero .button-area {
+    gap: 20px;
+  }
+
+  main .hero .button-area a {
+    font-size: 16px;
+  }
+
+  main .hero .menu-button,
+  main .hero .contact-button {
+    padding: 10px 20px;
+  }
+
+  main .about .left img {
+    display: none;
+  }
+
+  main .about .right article {
+    max-width: 400px;
+  }
+
+  main .menu .menu-kategori {
+    padding: 20px 0;
+  }
+
+  main .menu .our-menu .menu-item img {
+    width: 80px;
+  }
+
+  main .menu .our-menu .menu-item {
+    max-height: 100px;
+  }
+
+  main .menu .our-menu .menu-item h3 {
+    font-size: 14px;
+  }
+
+  main .menu .our-menu .menu-item p {
+    font-size: 10px;
+  }
+
+  main .testimoni h2::after {
+    margin-bottom: 20px;
+  }
+
+  main .testimoni .card-wrapper {
+    max-width: 300px;
+  }
+
+  main .gallery .gallery-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  main .gallery .gallery-card img {
+    height: 90px;
+  }
+
+  main .contact h2::after {
+    margin-bottom: 20px;
+  }
+
+  main .contact .contact-area .info {
+    padding: 0;
+  }
+
+  main .contact .contact-area {
+    flex-direction: column;
+  }
+
+  main .contact .contact-area .form {
+    margin: 10px 0;
+    padding: 0;
+  }
+}
