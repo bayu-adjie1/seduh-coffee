@@ -72,7 +72,7 @@ seduh-coffee/
 
 ## 📸 Preview
 
-> `![Preview](img/preview.png)`
+> `![Preview](images/preview.png)`
 
 ---
 
